@@ -317,7 +317,7 @@ Após executar este programa, a saída será um número que representa o IMC do 
 <details>
   <summary>Descrição</summary><br />
 
-No quarto requisito a casa inteligente deve tentar se conectar à internet. Dito isso crie um método `conectarInternet` que simula a tentativa de conexão à internet.
+No quarto requisito, a casa inteligente deve tentar se conectar à internet. Dito isso, crie um método `conectarInternet` que simula a tentativa de conexão à internet usando uma taxa de conexão fornecida.
 
 ```java
 public class SmartHouse {
@@ -330,31 +330,31 @@ public class SmartHouse {
 }
 ```
 
-Por exemplo,
+**Por exemplo:**
 
-O método deve simular a tentativa da casa inteligente de se conectar à internet. Lembre-se de que este é um método de simulação, portanto, não precisaremos realmente implementar uma conexão com a Internet, apenas simular o processo.
+O método `conectarInternet` deve simular a tentativa da casa inteligente de se conectar à internet usando uma taxa de sucesso fornecida. Lembre-se de que este é um método de simulação; portanto, não precisaremos realmente implementar uma conexão com a Internet, apenas simular o processo.
 
-Comece escrevendo a assinatura do método. No caso, ele é um método público que retorna um booleano (verdadeiro ou falso), portanto, sua assinatura deve começar com `public boolean. Em seguida, dê o nome ao método `conectarInternet` e adicione parênteses (), já que este método não recebe nenhum argumento.
+Comece escrevendo a assinatura do método. No caso, ele é um método público que retorna um booleano (verdadeiro ou falso). Portanto, sua assinatura deve começar com `public boolean`. Em seguida, dê o nome ao método `conectarInternet` e adicione parênteses com um argumento `double` para a taxa de sucesso da conexão.
 
-Você pode usar um loop `for` para simular várias tentativas de conexão. Nesse caso, queremos que a casa inteligente tente se conectar à Internet três vezes. Portanto, nosso loop for iniciará em 0 e terminará quando `i` for menor que `3`.
+A lógica interna do método é bastante direta:
 
-Simule a tentativa de conexão utilizando o método `Math.random()`. Este método retorna um número aleatório entre 0 (inclusivo) e 1 (exclusivo). Ao verificar se este número é menor que 0.5, estamos efetivamente dando à casa uma chance de 50% de se conectar à Internet em cada tentativa.
+1. Se a `connectionRate` (taxa de conexão) for maior que 0.5, o método deve retornar `true`, indicando uma conexão bem-sucedida.
+2. Se for menor ou igual a 0.5, o método deve retornar `false`, indicando que a conexão falhou.
 
-Por fim, se a condição for verdadeira, retornaremos true, indicando uma conexão bem-sucedida. Após as três tentativas (ou seja, o número aleatório nunca foi menor que 0.5), então retornaremos false após o loop for, indicando que a casa não conseguiu se conectar à Internet.
-
-Lembre-se, a saída será aleatória devido ao uso do Math.random(). Ao executar o programa várias vezes, você verá que às vezes imprime `"Conectado à Internet"` e às vezes `"Falha na conexão à Internet"`, dependendo dos números aleatórios gerados.
+**Por exemplo**, ao chamar `conectarInternet(0.8)`, você terá uma alta chance de sucesso e retornará `true`. No entanto, ao chamar `conectarInternet(0.2)`, o retorno é `false`.
 
 ```java
 public class Principal {
   public static void main(String[] args) {
     SmartHouse casa = new SmartHouse();
-    boolean conectado = casa.conectarInternet();
+    boolean conectado = casa.conectarInternet(0.7);
     System.out.println(conectado ? "Conectado à Internet" : "Falha na conexão à Internet");
   }
 }
 ```
-
 </details>
+
+---
 
 <details>
 <summary><strong> 🗣 Nos dê feedbacks sobre o exercício!</strong></summary>

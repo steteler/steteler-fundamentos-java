@@ -77,12 +77,14 @@ public class SmartHouseTest {
 
   @Test
   @DisplayName("4 - Conexão à Internet")
-  public void testConexaoInternet()
-      throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-    boolean isConnected = (boolean) smartHouseClass.getDeclaredMethod("conectarInternet")
-        .invoke(this.smartHouse);
+  public void testConexaoInternet() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    Method conectarMethodWithRate = smartHouseClass.getDeclaredMethod("conectarInternet", double.class);
 
-    assertTrue(isConnected);
+    boolean isConnectedHighRate = (boolean) conectarMethodWithRate.invoke(smartHouse, 0.8);
+    boolean isConnectedLowRate = (boolean) conectarMethodWithRate.invoke(smartHouse, 0.2);
+
+    assertTrue(isConnectedHighRate);
+    assertFalse(isConnectedLowRate);
   }
 }
 
