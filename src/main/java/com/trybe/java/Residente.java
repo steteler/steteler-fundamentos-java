@@ -6,12 +6,21 @@ package com.trybe.java;
 public class Residente {
   public String nome;
   public int idade;
-  public float peso, altura;
+  public float peso;
+  public float altura;
 
+  /**
+   * Constructor da classe Residente, para inicializar os atributos de cada residente.
+   *
+   * @param nome O nome do residente.
+   * @param idade A idade do residente.
+   * @param peso O peso do residente.
+   * @param altura A altura do residente.
+   */
   public Residente(String nome, int idade, float peso, float altura) {
     this.nome = nome;
-    this.idade = (short) idade;
-    this.peso = (float) peso;
+    this.idade = idade;
+    this.peso = peso;
     this.altura = altura;
   }
 }
