@@ -36,12 +36,20 @@ public class SmartHouse {
   /**
    * Verifica se a lâmpada está ligada.
    *
-   * @return Retorna true se a lâmpada estiver ligada, senão ela retorna false.
+   * @return true Se a lâmpada estiver ligada.
+   * @return false Se a lâmpada estiver desligada.
    */
   public boolean isLampadaLigada() {
     return isLightOn;
   }
 
+  /**
+   * Verifica se possui internet.
+   *
+   * @param connectionRate É a taxa de conexão da internet.
+   * @return true Se connectionRate for maior do que 0.5.
+   * @return false Se connectionRate for menor ou igual a 0.5.
+   */
   public boolean conectarInternet(double connectionRate) {
     if (connectionRate > 0.5) {
       return true;
