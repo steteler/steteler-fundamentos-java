@@ -6,8 +6,8 @@ package com.trybe.java;
 public class Residente {
   public String nome;
   public int idade;
-  public float peso;
-  public float altura;
+  public double peso;
+  public double altura;
 
   /**
    * Constructor da classe Residente, para inicializar os atributos de cada residente.
@@ -17,10 +17,19 @@ public class Residente {
    * @param peso O peso do residente.
    * @param altura A altura do residente.
    */
-  public Residente(String nome, int idade, float peso, float altura) {
+  public Residente(String nome, int idade, double peso, double altura) {
     this.nome = nome;
     this.idade = idade;
     this.peso = peso;
     this.altura = altura;
+  }
+
+  /**
+   * Calcula o IMC do residente baseado no peso e na altura.
+   *
+   * @return O IMC calculado do residente.
+   */
+  public double calculaImc() {
+    return peso / (altura * altura);
   }
 }
