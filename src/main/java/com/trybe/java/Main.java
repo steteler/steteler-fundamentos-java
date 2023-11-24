@@ -27,6 +27,7 @@ public class Main {
     System.out.println(
         house.conectarInternet(0.7) ? "Conectado à Internet" : "Falha na conexão à Internet"
     );
+    
     System.out.println(
         house.conectarInternet(0.2) ? "Conectado à Internet" : "Falha na conexão à Internet"
     );
