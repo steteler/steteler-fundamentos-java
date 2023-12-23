@@ -16,7 +16,7 @@ public class Main {
 
     SmartHouse house = new SmartHouse();
 
-    System.out.println("O IMC de " + residente.nome + " é: " + residente.calculaImc());
+    System.out.println("O IMC de " + residente.getNome() + " é: " + residente.calculaImc());
 
     System.out.println("A luz está: " + (house.isLampadaLigada() ? "ligada" : "desligada"));
     house.ligarLampada();
@@ -27,7 +27,7 @@ public class Main {
     System.out.println(
         house.conectarInternet(0.7) ? "Conectado à Internet" : "Falha na conexão à Internet"
     );
-    
+
     System.out.println(
         house.conectarInternet(0.2) ? "Conectado à Internet" : "Falha na conexão à Internet"
     );

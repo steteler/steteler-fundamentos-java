@@ -45,7 +45,7 @@ public class SmartHouse {
   /**
    * Verifica se possui internet.
    *
-   * @param connectionRate É a taxa de conexão da internet.
+   * @param connectionRate É a taxa de conexão da ‘internet’.
    * @return true Se connectionRate for maior do que 0.5, senão retorna false.
    */
   public boolean conectarInternet(double connectionRate) {

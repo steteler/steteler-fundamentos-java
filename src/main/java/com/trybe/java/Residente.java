@@ -4,17 +4,18 @@ package com.trybe.java;
  * Representa uma pessoa.
  **/
 public class Residente {
-  public String nome;
-  public int idade;
-  public double peso;
-  public double altura;
+
+  private String nome;
+  private int idade;
+  private double peso;
+  private double altura;
 
   /**
    * Constructor da classe Residente, para inicializar os atributos de cada residente.
    *
-   * @param nome O nome do residente.
-   * @param idade A idade do residente.
-   * @param peso O peso do residente.
+   * @param nome   O nome do residente.
+   * @param idade  A idade do residente.
+   * @param peso   O peso do residente.
    * @param altura A altura do residente.
    */
   public Residente(String nome, int idade, double peso, double altura) {
@@ -31,5 +32,9 @@ public class Residente {
    */
   public double calculaImc() {
     return peso / (altura * altura);
+  }
+
+  public String getNome() {
+    return nome;
   }
 }
